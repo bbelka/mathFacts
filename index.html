@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <title>Math Facts</title>
+</head>
+
+<body>
+    <header class="jumbotron container" id="header">
+        <div class="container">
+            <h1 class="display-4">Math Facts</h1>
+            <p class="lead">Choose your parameters and try to beat your personal best.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card text-center ">
+            <div class="card-header bg-dark text-light">
+                Choose your parameters
+            </div>
+            <div class="card-body bg-dark ">
+                <div class="row">
+                    <div class="col-6 bg-primary">
+                        <h5 class="card-title text-white">Instructions</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item card-text">Select each of your desired parameters</li>
+                            <li class="list-group-item card-text">Answer problems as fast as you can.</li>
+                            <li class="list-group-item card-text">Receive a score</li>
+                            <li class="list-group-item card-text">Try to beat your best score</li>
+                        </ul>
+                    </div>
+                    <form class="col-6 bg-warning" id="parameterForm">
+                        <div class="form-group">
+                            <label for="numerl1DigitsSelect">Select a number of digits in the first number</label>
+                            <select class="form-control" id="numeral1DigitsSelect">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="numeral2DigisSelect">Select a number of digits in the second number</label>
+                            <select class="form-control" id="numeral2DigitsSelect">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="operatorSelect">Select an operator</label>
+                            <select class="form-control" id="operatorSelect">
+                        <option>+</option>
+                        <option>-</option>
+                        <option >&times</option>
+                        <option >&divide</option>
+                        <option>random</option>
+                      </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeInput">Length in seconds</label>
+                            <input type="number" class="form-control" id="timeInput" placeholder="60">
+                        </div>
+                        <button class="btn btn-success w-100 text-danger" type="submit ">Start</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <form class="row" id="mathProblemDiv">
+            <div class="col" id="numeral1Div">
+                <h1 class="values display-1" id="numeral1H1">
+                    1
+                </h1>
+            </div>
+            <div class="col" id="operatorDiv">
+                <h1 class="values display-1" id="operatorH1">
+                    +
+                </h1>
+            </div>
+            <div class="col" id="numeral2Div">
+                <h1 class="values display-1" id="numeral2H1">
+                    2
+                </h1>
+            </div>
+            <div class="col" id="equalsDiv">
+                <h1 class="values display-1" id="equalsH1">
+                    =
+                </h1>
+            </div>
+            <div class="col" id="answerDiv">
+                <div class="form-group">
+                    <label for="answer">Answer here!</label>
+                    <input type="number" class="form-control" id="answer">
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
