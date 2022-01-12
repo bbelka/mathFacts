@@ -1,3 +1,19 @@
 #header {
     background-color: steelblue;
 }
+
+#correctIncorrect {
+    font-weight: bolder;
+}
+
+#correct {
+    color: green;
+}
+
+#incorrect {
+    color: red
+}
+
+.hidden {
+    display: none;
+}
