@@ -14,12 +14,12 @@
     <title>Math Facts</title>
 </head>
 
-<body class="container">
-    <header class="jumbotron justify-content-center" id="header">
-
-        <h1 class="display-4">Math Facts</h1>
-        <p class="lead">Choose your parameters and try to beat your personal best.</p>
-
+<body class="container bg-dark">
+    <header id="header">
+        <div class="jumbotron d-flex flex-column align-items-center justify-content-center" id="headerDiv">
+            <h1 class="display-4">Math Facts</h1>
+            <p class="lead">Choose your parameters and try to beat your personal best.</p>
+        </div>
     </header>
 
     <main class="container">
@@ -28,8 +28,8 @@
                 Choose your parameters
             </div>
             <div class="card-body bg-dark ">
-                <div class="row">
-                    <div class="col-12 col-md-6 bg-primary mb-2 p-2">
+                <div class="row d-flex justify-content-around">
+                    <div class="col-12 col-md-5 bg-primary pt-2">
                         <h5 class="card-title text-white">Instructions</h5>
                         <div class="card-body">
                             <ul class="list-group">
@@ -40,26 +40,26 @@
                             </ul>
                         </div>
                     </div>
-                    <form class="col-12 col-md-6 bg-warning mb-2 p-2">
-                        <div class="form-group">
-                            <label for="numerl1DigitsSelect">Select a number of digits in the first number</label>
-                            <select class="form-control" id="numeral1DigitsSelect">
+                    <form class="col-12 col-md-5 bg-warning pt-2 pb-2">
+                        <div class="form-group row">
+                            <label class="col-10" for="numerl1DigitsSelect">Select a number of digits in the first number</label>
+                            <select class="form-control bg-dark text-light col-2" id="numeral1DigitsSelect">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                       </select>
                         </div>
-                        <div class="form-group">
-                            <label for="numeral2DigisSelect">Select a number of digits in the second number</label>
-                            <select class="form-control" id="numeral2DigitsSelect">
+                        <div class="form-group row">
+                            <label class="col-10" for="numeral2DigisSelect">Select a number of digits in the first number</label>
+                            <select class="form-control bg-dark text-light col-2" id="numeral2DigitsSelect">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                       </select>
                         </div>
-                        <div class="form-group">
-                            <label for="operatorSelect">Select an operator</label>
-                            <select class="form-control" id="operatorSelect">
+                        <div class="form-group row">
+                            <label class="col-10" for="operatorSelect">Select an operator</label>
+                            <select class="form-control bg-dark text-light col-2" id="operatorSelect">
                         <option>+</option>
                         <option>-</option>
                         <option >*</option>
@@ -67,13 +67,13 @@
                         <option>random</option>
                       </select>
                         </div>
-                        <div class="form-group">
-                            <label for="numberOfProblemsInput">Number of Problems</label>
-                            <input type="number" class="form-control" value='20' id="numberOfProblemsInput">
+                        <div class="form-group row">
+                            <label class="col-10" for="numberOfProblemsInput">Number of Problems</label>
+                            <input type="number" class="form-control bg-dark text-light col-2" value='20' id="numberOfProblemsInput">
                         </div>
-                        <div class="form-group">
-                            <label for="timeInput">Length (seconds)</label>
-                            <input type="number" class="form-control" value='60' id="timeInput">
+                        <div class="form-group row">
+                            <label class="col-10" for="timeInput">Length (seconds)</label>
+                            <input type="number" class="form-control bg-dark text-light col-2" value='60' id="timeInput">
                         </div>
                         <button class="btn btn-success w-100 text-danger" type="submit ">Start</button>
                     </form>
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        <form class="row hidden" id="mathProblemDiv">
+        <form class="row hidden text-light" id="mathProblemDiv">
             <div class="col" id="numeral1Div">
                 <h1 class="values display-1" id="numeral1H1">
                     ____
@@ -103,9 +103,9 @@
                 </h1>
             </div>
             <div class="col" id="answerDiv">
-                <div class="form-group">
+                <div class="form-group bg-dark text-light">
                     <label for="answer">Answer here!</label>
-                    <input type="number" step="0.01" class="form-control" id="answer">
+                    <input type="number" step="0.01" class="form-control bg-dark text-light" id="answer">
                 </div>
             </div>
         </form>

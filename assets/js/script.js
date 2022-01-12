@@ -43,11 +43,11 @@ const generateNumber = (num) => {
 };
 
 const displayProblem = () => {
+    $('#mathProblemDiv')[0].reset();
     if (selectedOperator === 'random') {
         const operators = ['+', '-', '*', '/'];
         operator = operators[Math.floor(Math.random() * operators.length)]
     } else { operator = selectedOperator };
-    // operator = selectedOperator;
     firstNum = generateNumber(first);
     secondNum = generateNumber(second);
     if (operator === '/') {
@@ -92,15 +92,12 @@ const handleFormSubmit = (e) => {
     numberOfProblems = parseInt($('#numberOfProblemsInput').val());
     time = parseInt($('#timeInput').val());
     questionCounter = 1;
-    console.log(first);
     playGame();
 };
 
 const compareAnswer = () => {
-    console.log(operator);
     const userAnswer = parseFloat($('#answer').val());
     const computedAnswer = computations[operator](firstNum, secondNum);
-    console.log(userAnswer, computedAnswer);
     return userAnswer === computedAnswer ? true : false;
 }
 
