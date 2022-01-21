@@ -8,6 +8,11 @@ let numberOfProblems = new Number;
 let time = new Number;
 let questionCounter = new Number;
 
+const stats = {
+    correct: 0,
+    incorrect: 0
+}
+
 const computations = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
@@ -15,12 +20,9 @@ const computations = {
     '/': (a, b) => a / b
 }
 
-const generateDigit = () => {
-    return Math.floor(Math.random() * 9);
-};
+const generateDigit = () => Math.floor(Math.random() * 9);
 
 const generateNumber = (num) => {
-    console.log(num);
     let numArr = new Array;
     if (num === 1) {
         let digit = generateDigit();
@@ -70,6 +72,22 @@ const displayProblem = () => {
     $('#operatorH1').text(operator);
     $('#mathProblemDiv').removeClass('hidden')
     $('#answer').select();
+};
+
+const gameOver = () => {
+    console.log(stats);
+    $('#mathProblemDiv').addClass('hidden');
+    $('#score').removeClass('hidden');
+    $('#score').text(`Your score is: ${stats.correct}/${numberOfProblems}`)
+    $('*').on('keyup', () => {
+        stats.correct = 0;
+        stats.incorrect = 0;
+        console.log(stats);
+        $('#score').addClass('hidden');
+        $('#header').removeClass('hidden');
+        $('#parameterForm').removeClass('hidden');
+        $('*').off('keyup');
+    })
 }
 
 const playGame = () => {
@@ -78,9 +96,7 @@ const playGame = () => {
     if (questionCounter <= numberOfProblems) {
         displayProblem();
     } else {
-        $('#header').removeClass('hidden');
-        $('#parameterForm').removeClass('hidden');
-        $('#mathProblemDiv').addClass('hidden');
+        gameOver();
     }
 };
 
@@ -102,6 +118,7 @@ const compareAnswer = () => {
 }
 
 const correct = () => {
+    stats.correct++;
     $('#mathProblemDiv').addClass('hidden');
     $('#correct').removeClass('hidden')
     setTimeout(() => {
@@ -113,6 +130,7 @@ const correct = () => {
 };
 
 const incorrect = () => {
+    stats.incorrect++;
     $('#mathProblemDiv').addClass('hidden');
     $('#incorrect').removeClass('hidden')
     setTimeout(() => {

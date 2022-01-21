@@ -17,3 +17,16 @@
 .hidden {
     display: none;
 }
+
+.values {
+    /* font-family: 'Indie Flower', cursive; */
+    font-size: 260px;
+}
+
+#answerDiv {
+    font-size: 60px;
+}
+
+#stats {
+    font-size: 60px;
+}
